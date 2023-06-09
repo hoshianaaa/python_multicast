@@ -12,5 +12,5 @@ mreq = struct.pack("4sl", socket.inet_aton(MULTICAST_ADDRESS), socket.INADDR_ANY
 sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq) # sending IGMPv2 membership queries
 print("Joined Multicast-Address: " + MULTICAST_ADDRESS + " ... listening on udp port " + str(MULTICAST_PORT))
 while True:
-	print sock.recv(10240)
+	print(sock.recv(10240))
 	time.sleep(0.02)

@@ -14,5 +14,5 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
 sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, MULTICAST_TTL)
 #send and wait
 for x in range(MULTICAST_COUNT):
-	sock.sendto(str(MULTICAST_PAYLOAD),(MULTICAST_ADDRESS,MULTICAST_PORT))
+	sock.sendto(str(MULTICAST_PAYLOAD).encode(),(MULTICAST_ADDRESS,MULTICAST_PORT))
 	sleep(rateS)
